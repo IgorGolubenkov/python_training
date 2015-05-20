@@ -1,1 +1,2 @@
-# python_training
+# Repasitory for Python Training
+
