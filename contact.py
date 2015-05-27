@@ -18,7 +18,6 @@ class Contact:
         self.web="www"
         self.phone_2="home phone"
         self.h_phone="54321"
-        selfm_phone="67890"
         self.location_2="street-street"
         self.note="non"
         self.fax="dom"
