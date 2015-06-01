@@ -1,23 +1,18 @@
 __author__ = 'user'
-from selenium.webdriver.firefox.webdriver import WebDriver
 
 
-class Supplement:
+class ContactHelper:
 
-    def __init__(self):
-        self.wd = WebDriver()
-        self.wd.implicitly_wait(60)
-
-    def open_home_page(self):
-        wd = self.wd
-        wd.get("http://localhost/addressbook/")
+    def __init__(self, app):
+        self.app = app
 
     def open_form_add(self):
-        wd = self.wd
+        wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
 
-    def creat_contact(self, contact):
-        wd = self.wd
+    def create(self, contact):
+        wd = self.app.wd
+        self.open_form_add()
         # fill contact form
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
@@ -72,8 +67,4 @@ class Supplement:
         wd.find_element_by_name("notes").send_keys(contact.note)
         # submit contact creation
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
-
-    def destroy(self):
-        self.wd.quit()
-
 
