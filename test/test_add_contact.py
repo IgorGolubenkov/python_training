@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 import pytest
-from contact import Contact
-from supplement import Supplement
+
+from model.contact import Contact
+from fixture.supplement import Supplement
+
 
 @pytest.fixture
 def app(request):
