@@ -1,4 +1,3 @@
-__author__ = 'user'
 
 
 class ContactHelper:
@@ -156,14 +155,13 @@ class ContactHelper:
         self.return_to_home_page()
 
 
-    def delete_contact(self, contact):
+    def delete_contact(self):
         wd = self.app.wd
         # select first contact
-        if not wd.find_element_by_id("17").is_selected():
-            wd.find_element_by_id("17").click()
-        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.find_element_by_name("selected[]").click()
         # submit deletion
-        wd.find_element_by_name("delete").click()
+        wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
+        wd.switch_to_alert().accept()
         self.return_to_home_page()
 
 

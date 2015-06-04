@@ -1,5 +1,4 @@
-# -*- coding: utf-8 -*-
-__author__ = 'user'
+
 
 from model.group import Group
 

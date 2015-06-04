@@ -1,4 +1,3 @@
-__author__ = 'user'
 
 
 from model.contact import Contact

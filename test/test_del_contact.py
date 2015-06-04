@@ -1,4 +1,3 @@
-__author__ = 'Игра Света!'
 
 
 def test_delete_contact(app):
