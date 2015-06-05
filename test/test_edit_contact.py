@@ -3,7 +3,7 @@
 from model.contact import Contact
 
 def test_edit_contact(app):
-    app.contact.edit(Contact(name_contact="ganna", mname_contact="ganna2", lname_contact="ganna",
-    nick="cate", header="neft", enterprise="gazprom", location="avenu", j_phone="666", mail_1="ganna@ya.ru",
-    mail_2="ganna2@ya.ru", web="www.yandex.ru", phone_2="13666", h_phone="131313", m_phone="66613", location_2="lenina",
-    note="No",fax="dom", byear="1991", ayear="1991"))
+    app.contact.edit(Contact(firstname="ganna", middlename="ganna2", lastname="ganna3",
+    nickname="cate", title="neft", company="gazprom", address="avenu", home="666", mobile="131313", work="777",
+    fax="222", email="ganna@ya.ru", email2="ganna2@ya.ru", email3="derty@ya.ru", homepage="www.yandex.ru",
+    byear="2002", ayear="2020", phone2="13666", address2="lenina", notes="No"))
