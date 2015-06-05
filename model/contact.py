@@ -2,23 +2,24 @@
 
 class Contact:
 
-    def __init__(self, name_contact, mname_contact, lname_contact, header, enterprise, nick, location, fax,
-                      mail_1, mail_2, web, h_phone, m_phone, j_phone, location_2, note, phone_2, ayear, byear):
+    def __init__(self, name_contact, mname_contact, lname_contact, header, title, enterprise, nick, location, fax,
+                      email2, email3, homepage, h_phone, m_phone, j_phone, address2, notes, phone2, ayear, byear):
         self.name_contact = name_contact
         self.mname_contact = mname_contact
         self.lname_contact = lname_contact
         self.nick = nick
         self.header = header
+        self.title = title
         self.enterprise = enterprise
         self.location = location
         self.j_phone = j_phone
-        self.mail_1 = mail_1
-        self.mail_2 = mail_2
-        self.web = web
-        self.phone_2 = phone_2
+        self.email2 = email2
+        self.email3 = email3
+        self.homepage = homepage
+        self.phone2 = phone2
         self.h_phone = h_phone
-        self.location_2 = location_2
-        self.note = note
+        self.address2 = address2
+        self.notes = notes
         self.fax = fax
         self.m_phone = m_phone
         self.ayear = ayear
