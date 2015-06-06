@@ -5,9 +5,15 @@ class ContactHelper:
     def __init__(self, app):
         self.app = app
 
+
     def open_form_add(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
+
+
+    def open_home_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
 
 
     def create(self, contact):
@@ -21,6 +27,7 @@ class ContactHelper:
 
     def edit(self, contact):
         wd = self.app.wd
+        self.open_home_page()
         wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
         self.fill_contact_form(contact)
         # submit edit contact
@@ -30,7 +37,8 @@ class ContactHelper:
 
     def return_to_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        wd.find_element_by_link_text("home page").click()
+
 
     def change_field_value(self, field_name, text):
         wd = self.app.wd
@@ -65,7 +73,6 @@ class ContactHelper:
         self.change_field_value("address2", contact.address2)
         self.change_field_value("phone2", contact.phone2)
         self.change_field_value("notes", contact.notes)
-
 
     def delete_contact(self):
         wd = self.app.wd
