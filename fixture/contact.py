@@ -13,7 +13,8 @@ class ContactHelper:
 
     def open_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not (wd.current_url.endswith("/") and len(wd.find_elements_by_css_selector("img[alt=\"Edit\"]")) > 0):
+            wd.find_element_by_link_text("home").click()
 
 
     def create(self, contact):
@@ -21,7 +22,7 @@ class ContactHelper:
         self.open_form_add()
         self.fill_contact_form(contact)
         # submit contact creation
-        wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
+        wd.find_element_by_name("submit").click()
         self.return_to_home_page()
 
 
@@ -34,13 +35,15 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
 
+
     def open_modification_form(self):
         wd = self.app.wd
         wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
 
     def return_to_home_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home page").click()
+        if not (wd.current_url.endswith("/") and len(wd.find_elements_by_css_selector("img[alt=\"Edit\"]")) > 0):
+            wd.find_element_by_link_text("home page").click()
 
 
     def change_field_value(self, field_name, text):
@@ -85,8 +88,7 @@ class ContactHelper:
         # submit deletion
         wd.find_element_by_xpath("//div[@id='content']/form[2]/div[2]/input").click()
         wd.switch_to_alert().accept()
-        wd.find_element_by_link_text("home").click()
-
+        self.open_home_page()
 
     def modify_first_contact(self, new_contact_data):
         wd = self.app.wd
