@@ -245,7 +245,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/test/test_del_group.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Klon/python_training" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
