@@ -115,7 +115,7 @@ class ContactHelper:
             id = element.find_element_by_name("selected[]").get_attribute("value")
             firstname = element.find_element_by_xpath(".//td[3]").text
             lastname = element.find_element_by_xpath(".//td[2]").text
-            contacts.append(Contact(id = id, name = firstname, name_2=lastname))
+            contacts.append(Contact(id=id, firstname=firstname, lastname=lastname))
         return contacts
 
 
