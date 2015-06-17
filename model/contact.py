@@ -32,10 +32,10 @@ class Contact:
 
 
    def __repr__(self):
-      return "%s:%s" % (self.id, self.name)
+      return "%s:%s:%s" % (self.id, self.name, self.name_2)
 
 
    def __eq__(self, other):
-      return self.id == other.id and self.name == other.name
+      return (self.id is None or other.id is None or self.id == other.id) and self.name == other.name and self.name_2 == other.name_2
 
 
