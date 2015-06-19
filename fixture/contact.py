@@ -43,6 +43,13 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
 
+
+    def open_modification_form_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_css_selector("img[alt=\"Edit\"]")[index].click()
+
+
+
     def return_to_home_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/") and len(wd.find_elements_by_css_selector("img[alt=\"Edit\"]")) > 0):
@@ -100,10 +107,14 @@ class ContactHelper:
         self.contact_cache = None
 
 
-    def modify_first_contact(self, new_contact_data):
+    def modify_first_contact(self):
+        self.modify_contact_by_index(0)
+
+
+    def modify_contact_by_index(self, index, new_contact_data):
         wd = self.app.wd
         self.open_home_page()
-        self.open_modification_form()
+        self.open_modification_form_by_index(index)
         self.fill_contact_form(new_contact_data)
         wd.find_element_by_name("update").click()
         self.return_to_home_page()
