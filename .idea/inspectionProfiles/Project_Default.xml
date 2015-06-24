@@ -12,6 +12,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="test.test_add_contact.printold_contacts" />
+          <option value="test.test_add_group.x" />
         </list>
       </option>
     </inspection_tool>
