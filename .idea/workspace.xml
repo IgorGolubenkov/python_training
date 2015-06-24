@@ -24,8 +24,8 @@
       <file leaf-file-name="test_add_group.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_add_group.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5782313">
-              <caret line="10" column="94" selection-start-line="10" selection-start-column="94" selection-end-line="10" selection-end-column="94" />
+            <state vertical-scroll-proportion="0.4047619">
+              <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding>
                 <element signature="e#25#54#0" expanded="true" />
               </folding>
@@ -130,8 +130,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="104" />
-    <option name="y" value="40" />
+    <option name="x" value="84" />
+    <option name="y" value="126" />
     <option name="width" value="1227" />
     <option name="height" value="728" />
   </component>
@@ -679,7 +679,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="104" y="40" width="1227" height="728" extended-state="0" />
+    <frame x="84" y="126" width="1227" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22460777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1085,8 +1085,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_add_group.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5782313">
-          <caret line="10" column="94" selection-start-line="10" selection-start-column="94" selection-end-line="10" selection-end-column="94" />
+        <state vertical-scroll-proportion="0.4047619">
+          <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
           <folding>
             <element signature="e#25#54#0" expanded="true" />
           </folding>
