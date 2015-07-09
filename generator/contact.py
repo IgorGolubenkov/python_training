@@ -29,14 +29,18 @@ def random_string(prefix, maxlen):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 def random_number(maxlen):
-    symbols =  string.digits + " "*10 + "+" + "-"*4
+    symbols = string.digits + " "*10 + "+" + "-"*4
     return "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+#def random_rus_symbols(maxlen):
+    #rus_symbols = string.l
+    #return "".join([random.choice(rus_symbols) for i in range(random.randrange(maxlen))])
 
 
 testdata = [Contact(firstname="", middlename="", lastname="",nickname="", title="", company="", address="",
                     home="", mobile="", work="", fax="", email="", email2="", email3="", homepage="",
                     byear="", ayear="", phone2="", address2="", notes="")] + [
-    Contact(firstname = random_string("firstname", 15), middlename = random_string("middlename", 15), lastname = random_string("lastname", 15),
+    Contact(firstname = random_string("firstname", 10), middlename = random_string("middlename", 15), lastname = random_string("lastname", 15),
             nickname = random_string("nickname", 25), title = random_string("title", 20), company = random_string("company", 25),
             address = random_string("address", 40), home = random_number(30), mobile = random_number(25),
             work = random_number(30), fax = random_number(25),
