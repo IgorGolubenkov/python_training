@@ -1,15 +1,15 @@
 
 
+import pytest
 from model.contact import Contact
+from data.contacts import data_edit
 
-def test_edit_contact(app):
+
+@pytest.mark.parametrize("contact", data_edit, ids=[repr(x) for x in data_edit])
+def test_edit_contact(app, contact):
     if app.contact.count() == 0:
         app.contact.create(Contact(firstname="igor"))
     old_contacts = app.contact.get_contact_list()
-    contact = Contact(firstname="ganna", middlename="ganna2", lastname="ganna3",
-    nickname="cate", title="neft", company="gazprom", address="avenu", home="666", mobile="131313", work="777",
-    fax="222", email="ganna@ya.ru", email2="ganna2@ya.ru", email3="derty@ya.ru", homepage="www.yandex.ru",
-    byear="2002", ayear="2020", phone2="13666", address2="lenina", notes="No")
     app.contact.edit(contact)
     new_contacts = app.contact.get_contact_list()
     assert len(old_contacts) == app.contact.count()

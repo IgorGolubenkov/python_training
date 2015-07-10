@@ -17,6 +17,10 @@ testdata = [Contact(firstname="igor", middlename="igor2", lastname="igor3",
     fax="222", email="qwerty@yandex.ru", email2="igor@ya.ru", email3="igor2@ya.ru", homepage="www",
     byear="1991", ayear="1991", phone2="home phone", address2="street-street", notes="non")]
 
+data_edit = [Contact(firstname="ganna", middlename="ganna2", lastname="ganna3",
+    nickname="cate", title="neft", company="gazprom", address="avenu", home="666", mobile="131313", work="777",
+    fax="222", email="ganna@ya.ru", email2="ganna2@ya.ru", email3="derty@ya.ru", homepage="www.yandex.ru",
+    byear="2002", ayear="2020", phone2="13666", address2="lenina", notes="No")]
 
 #testdata = [Contact(firstname="igor", middlename="igor2", lastname="igor3",
     #nickname="nick", title="dir", company="app", address="street", home="09876", mobile="54321", work="777",
