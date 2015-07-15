@@ -1,16 +1,23 @@
 
 
 from model.group import Group
+import random
+from random import randrange
 
 
-def test_edit_first_group(app):
-    if app.group.count() == 0:
+def test_edit_group_by_id(app, db):
+    if len(db.get_group_list()) == 0:
         app.group.create(Group(name="игорь"))
-    old_groups = app.group.get_group_list()
-    group = Group(name="жанна", header="замена", footer="другое")
-    group.id = old_groups[0].id
-    app.group.edit_first_group(group)
-    new_groups = app.group.get_group_list()
+    old_groups = db.get_group_list()
+    group = random.choice(old_groups)
+    edit_data = Group(name="igor", header="dream", footer="sun")
+    app.group.edit_group_by_id(group.id, edit_data)
+    new_groups = db.get_group_list()
     assert len(old_groups) == len(new_groups)
-    old_groups[0] = group
-    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+    old_groups.remove(group)
+    new_groups.remove(edit_data)
+    assert old_groups == new_groups
+
+
+
+

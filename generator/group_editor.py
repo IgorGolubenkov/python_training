@@ -1,6 +1,4 @@
 
-
-
 from model.group import Group
 import random
 import string
@@ -16,8 +14,9 @@ except getopt.GetoptError as err:
     getopt.usage()
     sys.exit(2)
 
+
 n = 1
-f = "data/groups.json"
+f = "data/groups_editor.json"
 
 for o, a in opts:
     if o == "-n":
@@ -31,9 +30,9 @@ def random_string(prefix, maxlen):
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
 
 
-testdata = [Group(name="", header="", footer="")] + [
-    Group(name = random_string("name", 10), header = random_string("header", 20), footer = random_string("footer",20))
-    for i in range(n)
+testdata = [
+Group(name = random_string("name", 10), header = random_string("header", 20), footer = random_string("footer",20))
+for i in range(n)
 ]
 
 
