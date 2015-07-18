@@ -14,4 +14,7 @@ def test_delete_group_by_id(app, db, check_ui):
     old_groups.remove(group)
     assert old_groups == new_groups
     if check_ui:
-        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
+        def clean(group):
+            return Group(id=group.id, name=group.name.strip())
+        clean_new_groups = map(clean, db.get_group_list())
+        assert sorted(clean_new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
