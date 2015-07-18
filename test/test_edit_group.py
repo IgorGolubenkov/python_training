@@ -16,7 +16,7 @@ def test_edit_group_by_id(app, db):
     assert len(old_groups) == len(new_groups)
     old_groups.remove(group)
     new_groups.remove(edit_data)
-    assert old_groups == new_groups
+    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
 
 
 

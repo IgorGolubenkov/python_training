@@ -132,6 +132,24 @@ class ContactHelper:
         self.contact_cache = None
 
 
+    def modify_contact_by_id(self, id, modify_data):
+        wd = self.app.wd
+        self.open_home_page()
+        self.open_modification_form_by_id(id)
+        self.fill_contact_form(modify_data)
+        wd.find_element_by_name("update").click()
+        self.return_to_home_page()
+        self.contact_cache = None
+
+
+    def open_modification_form_by_id(self, id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("a[href='edit.php?id=%s']" % id).click()
+        #row = wd.find_elements_by_name("entry")
+        #cell = row.find_elements_by_tag_name("td")[7]
+        #cell.find_element_by_tag_name("a").click()
+
+
     def delete_contact_by_id(self, id):
         wd = self.app.wd
         self.select_contact_by_id(id)
@@ -145,7 +163,6 @@ class ContactHelper:
     def select_contact_by_id(self, id):
         wd = self.app.wd
         wd.find_element_by_css_selector("input[value='%s']" % id).click()
-
 
 
     def count(self):
