@@ -181,14 +181,14 @@ class ContactHelper:
             for row in wd.find_elements_by_name("entry"):
                 cells = row.find_elements_by_tag_name("td")
                 id = cells[0].find_element_by_tag_name("input").get_attribute("value")
-                firstname = cells[2].text
                 lastname = cells[1].text
+                firstname = cells[2].text
                 address = cells[3].text
-                all_phones = cells[5].text
-                all_email = cells[4].text
-                self.contact_cache.append(Contact(id=id, firstname=firstname, lastname=lastname,
-                                                  address=address, all_email_from_home_page=all_email,
-                                                  all_phones_from_home_page=all_phones))
+                #all_email = cells[4].text.splitlines()
+                all_phones = cells[5].text.splitlines()
+                self.contact_cache.append(Contact(id=id, lastname=lastname, firstname=firstname, address=address,
+                                                  #email=all_email[0], email2=all_email[1], email3=all_email[2],
+                                                  home=all_phones[0], mobile=all_phones[1], work=all_phones[2], phone2=all_phones[3]))
         return list(self.contact_cache)
 
 
